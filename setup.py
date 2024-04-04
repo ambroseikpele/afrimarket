@@ -15,7 +15,7 @@ with io.open(path.join(here, 'README.md'), encoding='utf-8') as f:
 setup(
     name='afrimarket',
     version=version,
-    description='Download market data from https://afx.kwayisi.org/',
+    description='Download african market data from https://afx.kwayisi.org/',
     long_description=long_description,
     long_description_content_type='text/markdown',
     url='https://github.com/sire-ambrose/afrimarket',
@@ -24,8 +24,8 @@ setup(
     license='Apache',
     classifiers=[
         'License :: OSI Approved :: Apache Software License',
-        # 'Development Status :: 3 - Alpha',
-        'Development Status :: 4 - Beta',
+         'Development Status :: 3 - Alpha',
+        # 'Development Status :: 4 - Beta',
         # 'Development Status :: 5 - Production/Stable',
 
 
@@ -44,7 +44,7 @@ setup(
         'Programming Language :: Python :: 3.10',
     ],
     platforms=['any'],
-    keywords='pandas, finance, africa market, stocks',
+    keywords='pandas, finance, african market, stocks, african stocks, africa',
     packages=find_packages(exclude=['contrib', 'docs', 'tests', 'examples']),
     install_requires=['requests==2.31.0', 'pandas==2.2.1', 'pyarrow==15.0.2', 'lxml==5.2.1'],
 )
