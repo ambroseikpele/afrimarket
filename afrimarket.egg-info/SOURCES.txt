@@ -1,0 +1,10 @@
+LICENSE.txt
+README.md
+setup.py
+afrimarket/__init__.py
+afrimarket/main.py
+afrimarket.egg-info/PKG-INFO
+afrimarket.egg-info/SOURCES.txt
+afrimarket.egg-info/dependency_links.txt
+afrimarket.egg-info/requires.txt
+afrimarket.egg-info/top_level.txt

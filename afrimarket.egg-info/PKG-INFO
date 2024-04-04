@@ -1,0 +1,29 @@
+Metadata-Version: 2.1
+Name: afrimarket
+Version: 0.0.1
+Summary: Download market data from https://afx.kwayisi.org/
+Home-page: https://github.com/sire-ambrose/afrimarket
+Author: Ambrose Ikpele
+Author-email: ikpeleambroseobinna@gmail.com
+License: Apache
+Keywords: pandas,finance,africa market,stocks
+Platform: any
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Development Status :: 4 - Beta
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Office/Business :: Financial
+Classifier: Topic :: Office/Business :: Financial :: Investment
+Classifier: Topic :: Scientific/Engineering :: Interface Engine/Protocol Translator
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+
+UNKNOWN
+
