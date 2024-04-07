@@ -1,0 +1,6 @@
+site_name: AfriMarket
+
+theme:
+  name: material
+  icon:
+    - annotation: material/arrow-right-circle
