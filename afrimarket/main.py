@@ -84,7 +84,6 @@ class Stock(Exchange):
         super().__init__(market)
 
         self.price_url= f'https://afx.kwayisi.org/chart/{self.market}/{self.ticker}'
-        print(self.price_url)
         self.url= f'https://afx.kwayisi.org/{self.market}/{self.ticker}.html'
 
 
