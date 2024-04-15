@@ -8,7 +8,8 @@ pip install afrimarket
 ```
 
 ## Usage
-Afrimaket provides multiple methods to help you access information about the stock you want. Using Afrimaeket means you call these methods for your use case. Here's a simple example to get the current price of the Access Bank PLC in Botswana
+Afrimaket provides multiple methods to help you access information about the stock you want. You can find a list of the methods supported in Afrimarket on the [methods page](./methods.md).
+Using Afrimaeket means you call these methods for your use case. Here's a simple example to get the current price of the Access Bank PLC in Botswana:
 
 ```Python
 import afrimarket as afm # import module
@@ -19,4 +20,12 @@ price = bse_access_stock.get_price() # get stock price
 
 print(price)
 ```
-You can find a list of the methods and markets supported in Afrimarket on the [methods page](./methods.md) and [markets page](./markets.md) respectively.
+To get a list of all the markets or exchanges supported by Afrimarket, you should use the `markets` attribute like this:
+
+```python
+import afrimarket as afm
+
+supported_markets = afm.markets # using the `markets` attribute to get all supported exchanges
+
+print(supported_markets) # prints the list of supported exchanges
+```
