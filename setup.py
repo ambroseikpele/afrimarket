@@ -1,16 +1,21 @@
 
 from setuptools import setup, find_packages
-import io
 from os import path
 
-version='0.0.1'
+version='0.0.0.0'
 
 
 here = path.abspath(path.dirname(__file__))
 
 # Get the long description from the README file
-with io.open(path.join(here, 'README.md'), encoding='utf-8') as f:
+with open(path.join(here, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
+
+# Get required packages
+with open(path.join(here, 'requirements.txt'), 'r') as file:
+    requirements_content = file.readlines()
+requirements_list = [requirement.strip() for requirement in requirements_content if requirement.strip()]
+
 
 setup(
     name='afrimarket',
@@ -46,7 +51,7 @@ setup(
     platforms=['any'],
     keywords='pandas, finance, african market, stocks, african stocks, africa',
     packages=find_packages(exclude=['contrib', 'docs', 'tests', 'examples']),
-    install_requires=['requests==2.31.0', 'pandas==2.2.1', 'pyarrow==15.0.2', 'lxml==5.2.1'],
+    install_requires=requirements_list,
 )
 
 print("""
