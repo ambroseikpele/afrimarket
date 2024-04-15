@@ -1,6 +1,7 @@
 ## Quick Start
 
 ```python
+import afrimarket as afm
 
 # Get exchange stock market information
 markets= afm.markets
