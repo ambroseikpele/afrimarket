@@ -29,3 +29,4 @@ supported_markets = afm.markets # using the `markets` attribute to get all suppo
 
 print(supported_markets) # prints the list of supported exchanges
 ```
+You can also visit the [markets page](./markets.md) to see an exhaustive list of supported exchanges and their short forms.

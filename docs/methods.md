@@ -1,7 +1,7 @@
 ## **Exchange Methods**
-The exchange methods will help you get information about a specific exchange such as the Nigerian Stock Exchange or the Botswana Stock exchange.
+The exchange methods will help you get information about a specific exchange such as the Nigerian Stock Exchange or the Botswana Stock Exchange.
 
-Afrimarket currently defines 4 methods to help you interact with information about an exchange. To use any of these methods, you have to firstly define an exchange to work with. Here's a simple example using the Nigerian Stock Exchange:
+Afrimarket currently defines 4 methods to help you interact with information about an exchange. To use any of these methods, you have to first define an exchange to work with. Here's a simple example using the Nigerian Stock Exchange:
 ```python
 import afrimarket as afm
 
@@ -26,7 +26,7 @@ index_price = ngx.get_index_price()
 
 print(index_price)
 ```
-The code above should return a dataframe that you can use within your code. The dataframe will contain the date and corresponding index price of the exchange. Here's the output of the code above:
+The code above should return a data frame that you can use within your code. The data frame will contain the date and corresponding index price of the exchange. Here's the output of the code above:
 
 ```shell
            Date      Price
@@ -46,7 +46,7 @@ The code above should return a dataframe that you can use within your code. The 
 ```
 
 ### **get_listed_companies**
-The `get_listed_companies` method returns a dataframe with information about all the companies available in that exchange. The dataframe contains 5 columns namely `Ticker`, `Name`, `Volume`, `Price`, and `Change`.
+The `get_listed_companies` method returns a data frame with information about all the companies available in that exchange. The data frame contains 5 columns namely `Ticker`, `Name`, `Volume`, `Price`, and `Change`.
 
 Here's a simple example demonstrating how to use the `get_listed_companies` method for the Nigerian stock exchange:
 ```Python
@@ -57,7 +57,7 @@ listed_companies= ngx.get_listed_companies()
 print(listed_companies)
 ```
 
-The code above will return a dataframe like this:
+The code above will return a data frame like this:
 
 ```shell
          Ticker                        Name      Volume  Price  Change
@@ -77,7 +77,15 @@ The code above will return a dataframe like this:
 ```
 
 <!-- ### **get_top_gainers**
-The `get_top_gainers` method will return a dataframe containing  -->
+The `get_top_gainers` method will return a data frame containing  -->
 
 
 <!-- ### **get_bottom_losers** -->
+
+
+## **Stock Methods**
+Stock methods help you interact with a specific stock available in your preferred Exchange. The following methods are available in Afrimarket.
+
+### **get_price**
+
+### **get_last_trading_results**
