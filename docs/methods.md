@@ -83,9 +83,9 @@ The `get_top_gainers` method will return a data frame containing  -->
 <!-- ### **get_bottom_losers** -->
 
 
-## **Stock Methods**
+<!-- ## **Stock Methods**
 Stock methods help you interact with a specific stock available in your preferred Exchange. The following methods are available in Afrimarket.
 
 ### **get_price**
 
-### **get_last_trading_results**
+### **get_last_trading_results** -->
