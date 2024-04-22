@@ -3,6 +3,7 @@ import pandas as pd
 from datetime import datetime
 from io import StringIO
 import re
+from bs4 import BeautifulSoup
 
 
 markets={
@@ -137,3 +138,11 @@ class Stock(Exchange):
             return data 
         except ValueError:
             print('Table Not Found')  
+    def get_factsheet(self):
+        r= requests.get(self.url)
+        soup= BeautifulSoup(r.content, 'html.parser')
+        content= soup.find('dl')
+        columns= [str(i)[str(i).index('dt')+3: str(i).index('<dd')] for i in content.find_all('dt')]
+        values= [i.text for i in content.find_all('dd')]
+        data=pd.DataFrame([values], columns=columns)
+        return data
