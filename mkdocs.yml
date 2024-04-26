@@ -4,3 +4,11 @@ theme:
   name: material
   icon:
     - annotation: material/arrow-right-circle
+  features:
+  - toc.follow
+  - content.code.copy
+
+markdown_extensions:
+  - pymdownx.superfences
+  - admonition
+  - pymdownx.details
