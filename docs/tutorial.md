@@ -92,4 +92,47 @@ market_caps_numerics = [convert_market_cap(value) for value in market_caps]
 If you print the `market_caps_numerics` variable, you will get a list containing actual numeric values.
 
 ## Plotting the Chart
-Now that you have sorted the data you need for the chart, the only thing left is to plot.
+Now that you have sorted the data you need for the chart, the only thing left is to plot it.
+
+The values for the x-axis will be the `tickers` and the y-axis will be the `market_caps_numerics`. The following code snippet will show you how to plot a bar chart with Matplotlib:
+```python
+X_axis = np.arange(len(tickers)) 
+plt.bar(X_axis, market_caps_numerics, width=0.7, label="Market Cap")
+
+plt.xticks(X_axis, tickers)
+plt.xlabel("Companies") 
+plt.ylabel("Market Cap")
+plt.title("UBA vs Competitors' Market Cap") 
+plt.show() 
+```
+If you run your code now, you should see a chart like this:
+<figure markdown="span">
+![Bar chart comparing the UBA stock to its competitors in the Nigerian Exchange by Market Cap](./assets/tutorial/uba-market-cap-comparison-bar-chart.png){ loading=lazy }
+<figcaption>Bar chart comparing the UBA stock to its competitors in the Nigerian Exchange by Market Cap</figcaption>
+</figure>
+
+The chart above is a bit difficult to read because you can't get exact values of each stock's market capitalization. It is also difficult to identify the bar representing UBA without going through the tickers. One method to solve these issues is to label each bar with the corresponding market capitalization from the `market_caps` variable and also give a different color to bar representing the UBA stock. To do this, modify the last bit of code to look like this:
+```python
+X_axis = np.arange(len(tickers)) 
+bars = plt.bar(X_axis, market_caps_numerics, width=0.7, label="Market Cap")
+bars[0].set_color('#FF5733')
+for i, bar in enumerate(bars):
+    plt.text(bar.get_x() + bar.get_width() / 2, bar.get_height(), market_caps[i], ha='center', va='bottom')
+
+
+plt.xticks(X_axis, tickers)
+plt.xlabel("Companies") 
+plt.ylabel("Market Cap")
+plt.title("UBA vs Competitors' Market Cap") 
+plt.show() 
+```
+
+Now, if you run your code, you should see a chart like this:
+<figure markdown="span">
+![Bar chart comparing the UBA stock to its competitors in the Nigerian Exchange by Market Cap.](./assets/tutorial/uba-market-cap-comparison-bar-chart-with-market-cap-on-each-bar.png){loading=lazy}
+<figcaption>Bar chart comparing the UBA stock to its competitors in the Nigerian Exchange by Market Cap.</figcaption>
+</figure>
+
+In this new chart, the market capitalization of each stock sits on the corresponding bar, and the UBA bar has a different color to make it distinct. You can compare your final code with the one on GitHub if you run into any errors.
+
+Now that you know how to manipulate the data available in Afrimarket, you can go ahead to build more complex visualizations.
