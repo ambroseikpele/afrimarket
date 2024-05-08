@@ -173,6 +173,26 @@ The above code will return the following output:
 ```
 The data frame above shows the **Opening Price**, **Low Price**, **High Price** **Traded Volume**, **Number of Deals**, and **Gross Turnover** of the UBA stock in the Nigerian Stock Exchange.
 
+### **get_growth_and_valuation**
+The **get_growth_and_valuation** method returns a data frame of the current valuation of a stock. Here's how to use the method:
+
+```python
+import afrimarket as afm
+
+uba = afm.Stock("uba", market="ngx")
+print(uba_stock.get_growth_and_valuation())
+```
+The code above should return something like this:
+```shell
+      Growth & Valuation Growth & Valuation.1
+0     Earnings Per Share                  NaN
+1    Price/Earning Ratio                  NaN
+2     Dividend Per Share                  NaN
+3         Dividend Yield                  NaN
+4     Shares Outstanding                34.2B
+5  Market Capitalization                 889B
+```
+
 ### **get_stock_market_performance_period**
 This method gives you information about how a stock performed over a given period of up to one year. Here is an example:
 
