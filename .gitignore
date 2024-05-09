@@ -5,5 +5,4 @@ dist
 env
 TODO
 issues.txt
-build.py
 __pycache__/

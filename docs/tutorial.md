@@ -2,6 +2,9 @@ This tutorial aims to show you how you can manipulate the data Afrimarket provid
 
 By the end of this tutorial, you will learn how to build a bar chart that compares the market capitalization of a specific stock to that of its competitors in the same exchange.
 
+!!! note
+    You can find the code snippets used in this tutorial on GitHub
+
 ## **Build a Barchart With Afrimarket and Matplotlib**
 The objective of this exercise is to build a bar chart to visualize how a stock is doing compared to its competitors by market capitalization. By doing so, you will learn how to manipulate the data you get from Afrimarket.
 
@@ -111,7 +114,7 @@ If you run your code now, you should see a chart like this:
 <figcaption>Bar chart comparing the UBA stock to its competitors in the Nigerian Exchange by Market Cap</figcaption>
 </figure>
 
-The chart above is a bit difficult to read because you can't get exact values of each stock's market capitalization. It is also difficult to identify the bar representing UBA without going through the tickers. One method to solve these issues is to label each bar with the corresponding market capitalization from the `market_caps` variable and also give a different color to bar representing the UBA stock. To do this, modify the last bit of code to look like this:
+The chart above is a bit difficult to read because you can't get the exact values of each stock's market capitalization. It is also difficult to identify the bar representing UBA without going through the tickers. One method to solve these issues is to label each bar with the corresponding market capitalization from the `market_caps` variable and also give a different color to the bar representing the UBA stock. To do this, modify the last bit of code to look like this:
 ```python
 X_axis = np.arange(len(tickers)) 
 bars = plt.bar(X_axis, market_caps_numerics, width=0.7, label="Market Cap")
