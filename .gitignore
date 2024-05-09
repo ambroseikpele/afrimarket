@@ -5,3 +5,4 @@ dist
 env
 TODO
 issues.txt
+__pycache__/
