@@ -1,10 +1,14 @@
-Afrimarket is a Python package that provides stock information of any company in nine of the stock exchanges available in Africa. Afrimarket gives you access to information such as thr price, trading results, and even competitiors of the company you choose.
+Afrimarket is a Python package that provides stock information of any company in nine of the stock exchanges available in Africa. Afrimarket gives you access to information such as the price, trading results, and even competitors of the company you choose.
 
 ## Installation
 You can install Afrimarket with pip:
 
 ```shell
 pip install afrimarket
+```
+You can also install the latest unreleased versions from GitHub:
+```shell
+pip install afrimarket@git+https://github.com/sire-ambrose/afrimarket 
 ```
 
 ## Usage

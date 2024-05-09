@@ -3,7 +3,7 @@ This tutorial aims to show you how you can manipulate the data Afrimarket provid
 By the end of this tutorial, you will learn how to build a bar chart that compares the market capitalization of a specific stock to that of its competitors in the same exchange.
 
 !!! note
-    You can find the code snippets used in this tutorial on GitHub
+    You can find the code snippets used in this tutorial on [GitHub](https://github.com/sire-ambrose/afrimarket/blob/main/tutorial.py){:target=_blank} 
 
 ## **Build a Barchart With Afrimarket and Matplotlib**
 The objective of this exercise is to build a bar chart to visualize how a stock is doing compared to its competitors by market capitalization. By doing so, you will learn how to manipulate the data you get from Afrimarket.
@@ -136,6 +136,6 @@ Now, if you run your code, you should see a chart like this:
 <figcaption>Bar chart comparing the UBA stock to its competitors in the Nigerian Exchange by Market Cap.</figcaption>
 </figure>
 
-In this new chart, the market capitalization of each stock sits on the corresponding bar, and the UBA bar has a different color to make it distinct. You can compare your final code with the one on GitHub if you run into any errors.
+In this new chart, the market capitalization of each stock sits on the corresponding bar, and the UBA bar has a different color to make it distinct. You can compare your final code with the one on [GitHub](https://github.com/sire-ambrose/afrimarket/blob/main/tutorial.py){:target=_blank} if you run into any errors.
 
 Now that you know how to manipulate the data available in Afrimarket, you can go ahead to build more complex visualizations.
