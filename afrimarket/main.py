@@ -25,8 +25,8 @@ class Exchange:
         self.market_url= f'https://afx.kwayisi.org/{self.market}/'
         self.market_price_url= f'https://afx.kwayisi.org/chart/{self.market}/'
 
-    def get_index_price(self):
-        content= str(requests.get(self.market_price_url).content)
+    def get_index_price(self, proxies=None):
+        content= str(requests.get(self.market_price_url, proxies=proxies).content)
         pattern = r'd\("(\d{4}-\d{2}-\d{2})"\),(\d+\.\d+)'
         matches = re.findall(pattern, content)
         date_price_list = []
@@ -35,7 +35,7 @@ class Exchange:
         df= pd.DataFrame(date_price_list, columns=['Date', 'Price'])
         return df
     
-    def get_listed_companies(self):
+    def get_listed_companies(self,proxies=None):
         try:
             content = StringIO(str(requests.get(self.market_url).content))
             data = pd.read_html(content, match='Ticker')[0]
@@ -61,17 +61,17 @@ class Exchange:
         except:
             print('Table Not Found')
 
-    def get_top_gainers(self):
+    def get_top_gainers(self, proxies=None):
         try:
-            content= StringIO(str(requests.get(self.market_url).content))
+            content= StringIO(str(requests.get(self.market_url, proxies=proxies).content))
             data= pd.read_html(content, match='Top Gainers')[0]
             return data
         except:
             print('Table Not Found')
 
-    def get_bottom_losers(self):
+    def get_bottom_losers(self, proxies=None):
         try:
-            content= StringIO(str(requests.get(self.market_url).content))
+            content= StringIO(str(requests.get(self.market_url, proxies=proxies).content))
             data= pd.read_html(content, match='Bottom Losers')[0]
             return data
         except:
@@ -88,8 +88,8 @@ class Stock(Exchange):
         self.url= f'https://afx.kwayisi.org/{self.market}/{self.ticker}.html'
 
 
-    def get_price(self):
-        content= str(requests.get(self.price_url).content)
+    def get_price(self, proxies=None):
+        content= str(requests.get(self.price_url, proxies=proxies).content)
         pattern = r'd\("(\d{4}-\d{2}-\d{2})"\),(\d+\.\d+)'
         matches = re.findall(pattern, content)
         date_price_list = []
@@ -98,48 +98,48 @@ class Stock(Exchange):
         df= pd.DataFrame(date_price_list, columns=['Date', 'Price'])
         return df
     
-    def get_last_trading_results(self):
+    def get_last_trading_results(self, proxies=None):
         try:
-            content= StringIO(str(requests.get(self.url).content))
+            content= StringIO(str(requests.get(self.url, proxies=proxies).content))
             data= pd.read_html(content, match='Last Trading Results')[0]
             return data
         except:
             print('Table Not Found')
 
-    def get_growth_and_valuation(self):
+    def get_growth_and_valuation(self, proxies=None):
         try:
-            content= StringIO(str(requests.get(self.url).content))
+            content= StringIO(str(requests.get(self.url, proxies=proxies).content))
             data= pd.read_html(content, match='Growth & Valuation')[0]
             return data
         except:
             print('Table Not Found')
 
-    def get_stock_market_performance_period(self):
+    def get_stock_market_performance_period(self, proxies=None):
         try:
-            content= StringIO(str(requests.get(self.url).content))
+            content= StringIO(str(requests.get(self.url, proxies=proxies).content))
             data_first= pd.read_html(content, match='4WK')[0]
             data_second= pd.read_html(content, match='YTD')[0]
             return pd.concat([data_first, data_second], axis=1)
         except:
             print('Table Not Found')
     
-    def get_stock_market_performance_date(self):
+    def get_stock_market_performance_date(self, proxies=None):
         try:
-            content= StringIO(str(requests.get(self.url).content))
+            content= StringIO(str(requests.get(self.url, proxies=proxies).content))
             data= pd.read_html(content, match='Change%')[0]
             return data
         except:
             print('Table Not Found')
     
-    def get_competitors(self):
+    def get_competitors(self, proxies=None):
         try:
-            content= StringIO(str(requests.get(self.url).content))
+            content= StringIO(str(requests.get(self.url, proxies=proxies).content))
             data= pd.read_html(content, match='Code')[0]
             return data 
         except ValueError:
             print('Table Not Found')  
-    def get_factsheet(self):
-        r= requests.get(self.url)
+    def get_factsheet(self, proxies=None):
+        r= requests.get(self.url, proxies=proxies)
         soup= BeautifulSoup(r.content, 'html.parser')
         content= soup.find('dl')
         columns= [str(i)[str(i).index('dt')+3: str(i).index('<dd')] for i in content.find_all('dt')]
